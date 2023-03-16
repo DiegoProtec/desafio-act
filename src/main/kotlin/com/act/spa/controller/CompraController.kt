@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RequestMapping("/compra")
+@RequestMapping("/carrinho-de-compras")
 @RestController
 class CompraController(val compraService: CompraService) {
 
-    @PostMapping("/")
+    @PostMapping("/salvar")
     fun realizarCompra(
             @RequestBody compra: CompraModelRequestDTO): ResponseEntity<CompraModelResponseDTO> = compraService
             .comprar(compra)

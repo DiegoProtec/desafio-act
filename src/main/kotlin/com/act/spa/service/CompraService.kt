@@ -15,9 +15,8 @@ class CompraService(val compraRepository: CompraRepository) {
     val compraModelRequestMapper: CompraModelRequestMapper = Mappers.getMapper(CompraModelRequestMapper::class.java)
 
     @Transactional(rollbackFor = [SQLException::class])
-    fun comprar(compraModelRequestDTO: CompraModelRequestDTO): CompraModelResponseDTO = compraModelRequestMapper
-            .convertToModel(compraModelRequestDTO)
-            .let { compraRepository.save(it) }
+    fun comprar(compraModelRequestDTO: CompraModelRequestDTO): CompraModelResponseDTO =
+        compraModelRequestMapper.convertToModel(compraModelRequestDTO).let { compraRepository.save(it) }
             .let { CompraModelResponseDTO("Compra realizada com sucesso!") }
 
 }

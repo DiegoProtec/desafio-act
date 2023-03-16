@@ -3,7 +3,7 @@ package com.act.spa.model
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "TB_PRODUTO")
+@Table(name = "TB_PRODUTO", uniqueConstraints = [UniqueConstraint(columnNames = ["COD_PRODUTO"])])
 @SequenceGenerator(name = "SEQ_GENERATOR_PRODUTO", sequenceName = "SEQ_PRODUTO", allocationSize = 1)
 class ProdutoModel(
         @Column(name = "COD_PRODUTO", nullable = false)

@@ -1,6 +1,6 @@
 package com.act.spa.repository
 
-import com.act.spa.model.ClienteModel
+import com.act.spa.model.ProdutoModel
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
@@ -8,9 +8,8 @@ import org.springframework.stereotype.Repository
 import java.util.*
 
 @Repository
-interface ClienteRepository : JpaRepository<ClienteModel, Long> {
+interface ProdutoRepository : JpaRepository<ProdutoModel, Long> {
 
-    @Query("SELECT c FROM ClienteModel c WHERE c.login = :login")
-    fun buscaClienteByLogin(@Param("login") login: String): Optional<ClienteModel>
-
+    @Query("SELECT p FROM ProdutoModel p WHERE p.codigo = :codigo")
+    fun buscaProdutoPorCodigo(@Param("codigo") codigo: String): Optional<ProdutoModel>
 }
