@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class ProdutoController(val produtoService: ProdutoService) {
 
-    @GetMapping("/")
+    @GetMapping("/listagem")
     fun listarProdutos(): ResponseEntity<List<ProdutoModelResponseDTO>> =
         produtoService.listarProdutos().let { ResponseEntity.ok(it) }
 

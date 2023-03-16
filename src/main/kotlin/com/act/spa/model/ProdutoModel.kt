@@ -13,7 +13,7 @@ class ProdutoModel(
         @Column(name = "DESC_PRODUTO", nullable = false)
         var descricao: String,
         @Column(name = "PRECO_PRODUTO", nullable = false)
-        var preco: Int,
+        var preco: Double,
         @Column(name = "QTD_PRODUTO", nullable = false)
         var quantidade: Int
 ) {
