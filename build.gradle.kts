@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.0"
 	id("org.jetbrains.kotlin.plugin.jpa") version "1.8.20-RC"
 	kotlin("jvm") version "1.7.22"
+	kotlin("kapt") version "1.7.22"
 	kotlin("plugin.spring") version "1.7.22"
 	kotlin("plugin.noarg") version "1.7.22"
 	kotlin("plugin.allopen") version "1.7.22"
@@ -25,6 +26,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.flywaydb:flyway-core:9.15.2")
 	implementation("com.h2database:h2:2.1.214")
+	implementation("org.mapstruct:mapstruct:1.5.3.Final")
+	kapt("org.mapstruct:mapstruct-processor:1.5.3.Final")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

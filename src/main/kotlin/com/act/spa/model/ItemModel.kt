@@ -9,7 +9,7 @@ class ItemModel(
         @ManyToOne(fetch = FetchType.LAZY, optional = false)
         @JoinColumn(name = "COD_COMPRA")
         val compra: CompraModel,
-        @ManyToOne(cascade = [CascadeType.PERSIST, CascadeType.MERGE], fetch = FetchType.LAZY, optional = false)
+        @ManyToOne(cascade = [(CascadeType.PERSIST)], fetch = FetchType.LAZY, optional = false)
         @JoinColumn(name = "COD_PRODUTO")
         val produto: ProdutoModel,
         @Column(name = "QTD_PRODUTO", nullable = false)

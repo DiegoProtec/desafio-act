@@ -8,7 +8,6 @@ import jakarta.persistence.*
 class ClienteModel(
         @Column(name = "NOME", nullable = false)
         val nome: String,
-        @Id
         @Column(name = "LOGIN", nullable = false)
         val login: String
 ) {
@@ -17,7 +16,7 @@ class ClienteModel(
     @Column(name = "ID_CLIENTE")
     val id: Long = 0
 
-    @OneToMany(cascade = [CascadeType.PERSIST, CascadeType.MERGE], fetch = FetchType.LAZY, mappedBy = "cliente")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
     private val _compras = mutableListOf<CompraModel>()
 
     val compras get() = _compras.toList()

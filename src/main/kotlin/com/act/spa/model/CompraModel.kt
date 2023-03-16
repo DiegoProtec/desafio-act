@@ -21,7 +21,7 @@ class CompraModel(
     @Column(name = "ID_COMPRA")
     val id: Long = 0
 
-    @OneToMany(cascade = [CascadeType.PERSIST, CascadeType.MERGE], fetch = FetchType.LAZY, mappedBy = "compra")
+    @OneToMany(cascade = [(CascadeType.ALL)], fetch = FetchType.LAZY, mappedBy = "compra")
     private val _itens = mutableListOf<ItemModel>()
 
     val itens get() = _itens.toList()

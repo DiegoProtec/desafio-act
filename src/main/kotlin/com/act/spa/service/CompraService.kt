@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional
 import java.sql.SQLException
 
 @Service
-class CompraService(compraRepository: CompraRepository) {
+class CompraService(val compraRepository: CompraRepository) {
 
     @Transactional(rollbackFor = [SQLException::class])
     fun comprar(compraModelRequestDTO: CompraModelRequestDTO): CompraModelResponseDTO {

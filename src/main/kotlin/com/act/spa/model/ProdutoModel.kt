@@ -6,7 +6,6 @@ import jakarta.persistence.*
 @Table(name = "TB_PRODUTO")
 @SequenceGenerator(name = "SEQ_GENERATOR_PRODUTO", sequenceName = "SEQ_PRODUTO", allocationSize = 1)
 class ProdutoModel(
-        @Id
         @Column(name = "COD_PRODUTO", nullable = false)
         var codigo: String,
         @Column(name = "NOME_PRODUTO", nullable = false)
