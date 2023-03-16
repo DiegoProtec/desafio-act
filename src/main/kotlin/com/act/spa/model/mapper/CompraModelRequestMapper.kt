@@ -2,7 +2,6 @@ package com.act.spa.model.mapper
 
 import com.act.spa.dto.request.CompraModelRequestDTO
 import com.act.spa.model.CompraModel
-import com.act.spa.repository.ClienteMap
 import org.mapstruct.Mapper
 import org.mapstruct.Mapping
 

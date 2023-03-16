@@ -8,14 +8,14 @@ import jakarta.persistence.*
 class ItemModel(
         @ManyToOne(fetch = FetchType.LAZY, optional = false)
         @JoinColumn(name = "COD_COMPRA")
-        val compra: CompraModel,
+        var compra: CompraModel,
         @ManyToOne(cascade = [(CascadeType.PERSIST)], fetch = FetchType.LAZY, optional = false)
         @JoinColumn(name = "COD_PRODUTO")
-        val produto: ProdutoModel,
+        var produto: ProdutoModel,
         @Column(name = "QTD_PRODUTO", nullable = false)
-        val quantidade: Int,
+        var quantidade: Int,
         @Column(name = "PRECO_ITEM", nullable = false)
-        val precoTotal: Double
+        var precoTotal: Double
 ) {
 
     @Id

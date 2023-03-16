@@ -1,8 +1,7 @@
-package com.act.spa.repository
+package com.act.spa.model.mapper
 
 import com.act.spa.model.ClienteModel
-import com.act.spa.model.mapper.StringToCliente
-import com.act.spa.model.mapper.StringToObject
+import com.act.spa.repository.ClienteRepository
 
 @StringToObject
 class ClienteMap(private val clienteRepository: ClienteRepository) {

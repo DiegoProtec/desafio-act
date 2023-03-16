@@ -7,9 +7,9 @@ import jakarta.persistence.*
 @SequenceGenerator(name = "SEQ_GENERATOR_CLIENTE", sequenceName = "SEQ_CLIENTE", allocationSize = 1)
 class ClienteModel(
         @Column(name = "NOME", nullable = false)
-        val nome: String,
+        var nome: String,
         @Column(name = "LOGIN", nullable = false)
-        val login: String
+        var login: String
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GENERATOR_CLIENTE")

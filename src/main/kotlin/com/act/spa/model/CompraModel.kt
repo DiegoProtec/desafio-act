@@ -8,12 +8,12 @@ import java.time.LocalDateTime
 @SequenceGenerator(name = "SEQ_GENERATOR_COMPRA", sequenceName = "SEQ_COMPRA", allocationSize = 1)
 class CompraModel(
         @Column(name = "PRECO_COMPRA", nullable = false)
-        val precoTotal: String,
+        var precoTotal: String,
         @Column(name = "DATA_COMPRA", nullable = false)
-        val dataCompra: LocalDateTime = LocalDateTime.now(),
+        var dataCompra: LocalDateTime = LocalDateTime.now(),
         @ManyToOne(fetch = FetchType.LAZY, optional = false)
         @JoinColumn(name = "COD_CLIENTE")
-        val cliente: ClienteModel
+        var cliente: ClienteModel
 ) {
 
     @Id
