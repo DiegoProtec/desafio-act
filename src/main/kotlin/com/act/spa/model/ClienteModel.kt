@@ -1,13 +1,14 @@
-package com.act.spa.model.entity
+package com.act.spa.model
 
 import jakarta.persistence.*
 
 @Entity
 @Table(name = "TB_CLIENTE")
 @SequenceGenerator(name = "SEQ_GENERATOR_CLIENTE", sequenceName = "SEQ_CLIENTE", allocationSize = 1)
-class Cliente(
+class ClienteModel(
         @Column(name = "NOME", nullable = false)
         val nome: String,
+        @Id
         @Column(name = "LOGIN", nullable = false)
         val login: String
 ) {
@@ -16,12 +17,12 @@ class Cliente(
     @Column(name = "ID_CLIENTE")
     val id: Long = 0
 
-    @OneToMany(cascade = [(CascadeType.ALL)], fetch = FetchType.LAZY, mappedBy = "cliente")
-    private val _compras = mutableListOf<Compra>()
+    @OneToMany(cascade = [CascadeType.PERSIST, CascadeType.MERGE], fetch = FetchType.LAZY, mappedBy = "cliente")
+    private val _compras = mutableListOf<CompraModel>()
 
     val compras get() = _compras.toList()
 
-    fun addCompra(compra: Compra) {
+    fun addCompra(compra: CompraModel) {
         _compras += compra
     }
 }

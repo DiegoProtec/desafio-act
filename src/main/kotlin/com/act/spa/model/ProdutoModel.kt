@@ -1,11 +1,12 @@
-package com.act.spa.model.entity
+package com.act.spa.model
 
 import jakarta.persistence.*
 
 @Entity
 @Table(name = "TB_PRODUTO")
 @SequenceGenerator(name = "SEQ_GENERATOR_PRODUTO", sequenceName = "SEQ_PRODUTO", allocationSize = 1)
-class Produto(
+class ProdutoModel(
+        @Id
         @Column(name = "COD_PRODUTO", nullable = false)
         var codigo: String,
         @Column(name = "NOME_PRODUTO", nullable = false)
