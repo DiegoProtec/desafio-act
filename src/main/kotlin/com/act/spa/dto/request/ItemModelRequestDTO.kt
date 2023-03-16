@@ -1,7 +1,7 @@
 package com.act.spa.dto.request
 
 data class ItemModelRequestDTO(
-        var produto: ProdutoModelRequestDTO,
+        var codProduto: String,
         var quantidade: Int,
         var precoTotal: Double
 )

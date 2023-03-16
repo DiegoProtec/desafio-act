@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 data class CompraModelRequestDTO(
         var precoTotal: String,
         var dataCompra: LocalDateTime,
-        var cliente: ClienteModelRequestDTO,
+        var login: String,
         var itens: Array<ItemModelRequestDTO>
 ) {
     override fun equals(other: Any?): Boolean {
@@ -16,7 +16,7 @@ data class CompraModelRequestDTO(
 
         if (precoTotal != other.precoTotal) return false
         if (dataCompra != other.dataCompra) return false
-        if (cliente != other.cliente) return false
+        if (login != other.login) return false
         if (!itens.contentEquals(other.itens)) return false
 
         return true
@@ -25,7 +25,7 @@ data class CompraModelRequestDTO(
     override fun hashCode(): Int {
         var result = precoTotal.hashCode()
         result = 31 * result + dataCompra.hashCode()
-        result = 31 * result + cliente.hashCode()
+        result = 31 * result + login.hashCode()
         result = 31 * result + itens.contentHashCode()
         return result
     }

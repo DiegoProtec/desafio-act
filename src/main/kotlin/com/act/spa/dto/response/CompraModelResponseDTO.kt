@@ -1,4 +1,3 @@
 package com.act.spa.dto.response
 
-class CompraModelResponseDTO {
-}
+data class CompraModelResponseDTO(val mensagem: String)
