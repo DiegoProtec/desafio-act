@@ -1,6 +1,7 @@
-package com.act.spa.dto.response
+package com.act.spa.model.dto
 
-data class ProdutoModelResponseDTO(
+data class ProdutoModelDTO(
+    var id: Long?,
     var codigo: String,
     var nome: String,
     var descricao: String,

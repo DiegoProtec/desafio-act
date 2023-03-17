@@ -1,10 +1,9 @@
-package com.act.spa.model
+package com.act.spa.model.entity
 
 import jakarta.persistence.*
 
 @Entity
 @Table(name = "TB_PRODUTO", uniqueConstraints = [UniqueConstraint(columnNames = ["COD_PRODUTO"])])
-@SequenceGenerator(name = "SEQ_GENERATOR_PRODUTO", sequenceName = "SEQ_PRODUTO", allocationSize = 1)
 class ProdutoModel(
         @Column(name = "COD_PRODUTO", nullable = false)
         var codigo: String,
@@ -18,7 +17,7 @@ class ProdutoModel(
         var quantidade: Int
 ) {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GENERATOR_PRODUTO")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID_PRODUTO")
     val id: Long = 0
 }

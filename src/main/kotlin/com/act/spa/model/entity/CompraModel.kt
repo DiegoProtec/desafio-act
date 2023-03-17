@@ -1,11 +1,10 @@
-package com.act.spa.model
+package com.act.spa.model.entity
 
 import jakarta.persistence.*
 import java.time.LocalDateTime
 
 @Entity
 @Table(name = "TB_COMPRA")
-@SequenceGenerator(name = "SEQ_GENERATOR_COMPRA", sequenceName = "SEQ_COMPRA", allocationSize = 1)
 class CompraModel(
     @Column(name = "PRECO_COMPRA", nullable = false)
     var precoTotal: String,
@@ -17,10 +16,8 @@ class CompraModel(
     @OneToMany(cascade = [(CascadeType.ALL)], fetch = FetchType.LAZY, mappedBy = "compra")
     val itens: Array<ItemModel>
 ) {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GENERATOR_COMPRA")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID_COMPRA")
     val id: Long = 0
-
 }

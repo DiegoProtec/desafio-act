@@ -1,8 +1,8 @@
 package com.act.spa.model.mapper
 
-import com.act.spa.dto.request.ItemModelRequestDTO
-import com.act.spa.model.ItemModel
-import com.act.spa.model.ProdutoModel
+import com.act.spa.model.dto.request.ItemModelRequestDTO
+import com.act.spa.model.entity.ItemModel
+import com.act.spa.model.entity.ProdutoModel
 import com.act.spa.repository.ProdutoRepository
 import org.mapstruct.Mapper
 import org.mapstruct.Mapping
@@ -12,7 +12,7 @@ import org.mapstruct.ReportingPolicy.IGNORE
 import org.springframework.beans.factory.annotation.Autowired
 
 @Mapper(unmappedTargetPolicy = IGNORE, componentModel = SPRING)
-abstract class ItemModelRequestMapper {
+abstract class ItemModelMapper {
 
     @Autowired
     private lateinit var produtoRepository: ProdutoRepository

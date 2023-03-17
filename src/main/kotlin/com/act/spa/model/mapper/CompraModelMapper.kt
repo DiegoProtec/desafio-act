@@ -1,8 +1,8 @@
 package com.act.spa.model.mapper
 
-import com.act.spa.dto.request.CompraModelRequestDTO
-import com.act.spa.model.ClienteModel
-import com.act.spa.model.CompraModel
+import com.act.spa.model.dto.request.CompraModelRequestDTO
+import com.act.spa.model.entity.ClienteModel
+import com.act.spa.model.entity.CompraModel
 import com.act.spa.repository.ClienteRepository
 import org.mapstruct.Mapper
 import org.mapstruct.Mapping
@@ -11,8 +11,8 @@ import org.mapstruct.Named
 import org.mapstruct.ReportingPolicy.IGNORE
 import org.springframework.beans.factory.annotation.Autowired
 
-@Mapper(unmappedTargetPolicy = IGNORE, componentModel = SPRING, uses = [ItemModelRequestMapper::class])
-abstract class CompraModelRequestMapper {
+@Mapper(unmappedTargetPolicy = IGNORE, componentModel = SPRING, uses = [ItemModelMapper::class])
+abstract class CompraModelMapper {
 
     @Autowired
     private lateinit var clienteRepositoryMapper: ClienteRepository

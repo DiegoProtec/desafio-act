@@ -1,8 +1,9 @@
 package com.act.spa.controller
 
-import com.act.spa.dto.request.CompraModelRequestDTO
-import com.act.spa.dto.response.CompraModelResponseDTO
+import com.act.spa.model.dto.request.CompraModelRequestDTO
+import com.act.spa.model.dto.response.CompraModelResponseDTO
 import com.act.spa.service.CompraService
+import org.springframework.http.MediaType.*
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -13,9 +14,10 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class CompraController(val compraService: CompraService) {
 
-    @PostMapping("/salvar")
+    @PostMapping("/salvar", consumes = [APPLICATION_JSON_VALUE])
     fun realizarCompra(
-            @RequestBody compra: CompraModelRequestDTO): ResponseEntity<CompraModelResponseDTO> = compraService
+            @RequestBody compra: CompraModelRequestDTO
+    ): ResponseEntity<CompraModelResponseDTO> = compraService
             .comprar(compra)
             .let { dto -> ResponseEntity.ok(dto) }
 

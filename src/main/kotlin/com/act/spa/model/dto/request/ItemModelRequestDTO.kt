@@ -1,4 +1,4 @@
-package com.act.spa.dto.request
+package com.act.spa.model.dto.request
 
 data class ItemModelRequestDTO(
         var codProduto: String,
