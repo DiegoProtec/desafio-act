@@ -38,3 +38,19 @@
 ## CONSULTAR BANCO DE DADOS:
 - link: http://localhost:8090/spa/h2-console
 - login: myuser
+
+---
+
+### RESOURCES
+
+- spa/estoque-de-produtos/listagem ; GET
+- spa/estoque-de-produtos/atualizar-produto ; POST ; Content-Type: application/json; body:
+      `
+         {
+             "codigo": "8D7SA897DS8AD7A",
+             "nome": "SHAMPOO WELLA INVIGO NUTRI-ENRICH",
+             "descricao": "Shamppo de cabelo WELLA",
+             "preco": 129.90,
+             "quantidade": 200
+         }
+      `
